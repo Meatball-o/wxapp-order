@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="pa-content">
+  <!--<view class="header">美食汇微菜单</view>-->
+  <swiper indicator-dots="{{indicatorDots}}"
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image style="width: 100%;" src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="pa-grid" style="margin-top: 10px;">
+    <block wx:for="{{items}}" wx:key="index">
+      <navigator url="order-detail/index?name={{item.name}} " class="pa-grid-item" hover-class="navigator-hover">{{item.name}}
+      </navigator>
+    </block>
+  </view>
+</view>

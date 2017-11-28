@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="pa-tab">
+  <view class="pa-tab-left">
+    <block wx:for="{{tabs}}" wx:key="index" >
+      <view class="pa-tab-left-con {{current==index?'current':''}}" data-index="{{index}}" bindtap="select">
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+  <view class="pa-tab-right">
+    <checkbox-group bindchange="checkboxChange">
+      <label wx:for="{{items}}" wx:key="index" class="checkbox">
+        <view class="pa-tab-right-con">
+          <view class="con-right">
+            <checkbox/>
+          </view>
+          <view class="con-left">
+            <view>{{item.name}}</view>
+            <view>¥{{item.price}}</view>
+          </view>
+
+        </view>
+      </label>
+    </checkbox-group>
+  </view>
+</view>
